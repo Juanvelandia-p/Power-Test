@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power Test</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('plantas/planta\ 2.jpeg'); 
+            background-size: cover; /* Ajusta el tamaño de la imagen de fondo para cubrir el cuerpo */
+            background-position: center; /* Centra la imagen de fondo */
+            position: relative; /* Establece posición relativa para contenido superpuesto */
+        }
+        .color-superpuesto {
+            position: absolute; /* Establece posición absoluta dentro del cuerpo */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 23, 10, 0.8); /* Color translúcido en formato RGBA */
+        }
+        section {
+            text-align: center;
+            max-width: 400px; /* Ajusta el ancho máximo según tus preferencias */
+	        color:white;	
+            padding: 40px;
+            margin: 0 auto; /* Centra horizontalmente */
+            z-index: 1; /* Asegura que el contenido esté por encima del color de fondo */
+        }
+        #logo {
+            width: 300px;
+            height: auto;
+            margin-top: 10px;
+        }
+        #Mantenimiento {
+            font-family: 'Lato', 'Roboto', sans-serif;
+            font-size: 40px;
+            margin: 0;
+        }
+        #Parrafo-ex {
+            font-family: 'Lato', sans-serif;
+            font-size: 20px;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="color-superpuesto"></div> 
+
+    <section>
+        <div id="logo-image">
+            <img id="logo" src="logos/Logo actualizado.png" alt="Logo de PowerTest">
+        </div>
+        <h2 id="Mantenimiento">En mantenimiento</h2>
+        <p id="Parrafo-ex">Estamos trabajando para darte la mejor experiencia. ¡No tardaremos!</p>
+    </section>
+</body>
+</html>

@@ -1,0 +1,126 @@
+@media (max-width: 680px) {
+
+    .menu-toggle {
+        display: block; /* Mostrar el botón del menú en pantallas pequeñas */
+    }
+
+    .logo {
+        max-width: 60vw; /* Ajusta el tamaño del logo para que sea proporcional */
+        height: auto; /* Ajusta la altura para que se adapte al contenedor */
+    }
+    #logo-lightened {
+        max-width: 55vw; /* Ajusta el tamaño del logo para que sea proporcional */
+        height: auto; /* Ajusta la altura para que se adapte al contenedor */
+    }
+
+    .top-bar {
+        justify-content: space-between; /* Asegurarse de que el contenido esté bien alineado */
+        height: 15%;
+    }
+
+    .right-Content{
+        margin-right: 5vw;
+    }
+    .slide-text{
+        left: 40vw;
+    }
+    .logo-container{
+        margin-top: 4vw;
+       height: 6vh;
+    }
+    #Logo-C {
+        max-width: 5vh; /* Ajusta el tamaño del logo para que sea proporcional */
+        height: auto;
+    }
+
+    .slide-text {
+        left: 20vw; /* Ajusta la posición horizontal del texto en pantallas pequeñas */
+        transform: translate(-10vw, -50%); /* Ajusta la transformación para mantener el centrado vertical */
+        width: 85%; /* Ajusta el ancho para evitar cortes */
+        max-width: 80vw; /* Limita el ancho máximo para mantener el texto en el contenedor */
+        padding: 1rem; /* Añade padding para evitar que el texto quede pegado a los bordes */
+    }
+
+    .slide-text h1 {
+        font-size: 6vh; /* Ajusta el tamaño del título para pantallas pequeñas */
+    }
+
+    .slide-text p {
+        font-size: 3vh; /* Ajusta el tamaño del párrafo para pantallas pequeñas */
+    }
+    .dropdown-content {
+        display: none; /* Asegurarse de que el menú desplegable esté oculto en móviles */
+    }
+
+    .menu-toggle {
+        display: block; /* Mostrar el botón del menú en móviles */
+    }
+
+    .show-menu {
+        display: flex; /* Mostrar el contenido del menú en móviles */
+    }
+    .navbar ul {
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 250px;
+        background-color: rgba(255, 255, 255, 0.9);
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 20;
+        padding-top: 6em;
+    }
+
+    .navbar ul li {
+        margin: 0;
+        padding: 10px;
+        text-align: start;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 2rem;
+        cursor: pointer;
+        color: white;
+        margin-left: auto;
+    }
+
+    .close-menu {
+        display: block;
+        font-size: 2rem;
+        color: rgb(0, 21, 10,0.7);
+        cursor: pointer;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        z-index: 21;
+    }
+
+    .navbar ul.show-menu {
+        transform: translateX(0);
+    }
+    .dropdown .submenu-container {
+        display: none;
+    }
+    .submenu-container {
+        display: none; /* Ocultar todos los submenús por defecto */
+        padding-left: 15px; /* Añadir un pequeño margen a la izquierda */
+    }
+
+    .submenu-content {
+        display: none; /* Ocultar contenido de cada sección por defecto */
+        margin-left: 15px; /* Añadir un pequeño margen a la izquierda */
+    }
+
+    .show .submenu-container,
+    .show .submenu-content {
+        display: block; /* Mostrar contenido cuando la clase 'show' esté presente */
+    }
+
+    .submenu-header {
+        cursor: pointer; /* Indicar que el encabezado es interactivo */
+        margin: 5px 0; /* Espacio entre encabezados */
+    }
+}

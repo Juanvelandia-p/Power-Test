@@ -1,0 +1,37 @@
+.footer-bar {
+    background-color: rgba(0, 21, 10, 0.4); /* Fondo oscuro */
+    color: white; /* Texto blanco */
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    bottom: 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 10px;
+    min-width: 200px; /* Para que las secciones no se vuelvan demasiado estrechas */
+}
+
+.footer-section h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid white; /* Línea debajo del título */
+    padding-bottom: 5px;
+}
+
+.footer-section p, .footer-section a {
+    font-size: 14px;
+    color: white;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}

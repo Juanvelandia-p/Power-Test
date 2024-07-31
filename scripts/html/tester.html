@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Desplegable</title>
+    <style>
+        /* Estilos básicos para el menú */
+        .navbar {
+            background-color: #333;
+            padding: 10px;
+        }
+
+        .menu, .submenu, .subsubmenu {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu-item, .submenu-item, .subsubmenu-item {
+            position: relative;
+        }
+
+        .menu-btn, .submenu-btn {
+            background: none;
+            border: none;
+            color: white;
+            padding: 10px;
+            text-align: left;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .menu-btn span, .submenu-btn span {
+            float: right;
+        }
+
+        .menu a, .submenu a, .subsubmenu a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+        }
+
+        .submenu, .subsubmenu {
+            display: none;
+            background-color: #444;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            width: 200px;
+        }
+
+        .menu-item:hover > .submenu, .submenu-item:hover > .subsubmenu {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="menu">
+            <li class="menu-item">
+                <button class="menu-btn">Menú 1 <span>></span></button>
+                <ul class="submenu">
+                    <li class="submenu-item">
+                        <button class="submenu-btn">Submenú 1-1 <span>></span></button>
+                        <ul class="subsubmenu">
+                            <li class="subsubmenu-item"><a href="#">Opción 1-1-1</a></li>
+                            <li class="subsubmenu-item"><a href="#">Opción 1-1-2</a></li>
+                        </ul>
+                    </li>
+                    <li class="submenu-item"><a href="#">Opción 1-2</a></li>
+                </ul>
+            </li>
+            <li class="menu-item"><a href="#">Menú 2</a></li>
+        </ul>
+    </nav>
+    <script>
+        document.querySelectorAll('.menu-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const submenu = button.nextElementSibling;
+                submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+
+        document.querySelectorAll('.submenu-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const subsubmenu = button.nextElementSibling;
+                subsubmenu.style.display = subsubmenu.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+</body>
+</html>
