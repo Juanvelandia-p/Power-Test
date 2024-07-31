@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Rutas relativas a las imágenes
-    const logoOriginal = '/resources/logos/Logo lightened actualizado.png';
-    const logoHover = '/resources/logos/Logo completo darkned.png';
+    const logoOriginal = 'resources/logos/Logo lightened actualizado.png';
+    const logoHover = 'resources/logos/Logo completo darkned.png';
 
 
     // Cambiar logo cuando el mouse está sobre la barra
