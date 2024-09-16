@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Vertical</title>
+    <style>
+        .vertical-menu {
+            width: 200px;
+        }
+
+        .menu-item {
+            background-color: #eee;
+            color: black;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .menu-item:hover {
+            background-color: #ccc;
+        }
+
+        .submenu {
+            display: none;
+            padding-left: 20px;
+        }
+
+        .submenu .menu-item {
+            justify-content: flex-start;
+        }
+
+        .menu-item.active + .submenu {
+            display: block;
+        }
+
+        .toggle-btn {
+            font-size: 12px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="vertical-menu">
+        <a href="#" class="menu-item">Elemento 1 <span class="toggle-btn">></span></a>
+        <div class="submenu">
+            <a href="#" class="menu-item">Subelemento 1.1 <span class="toggle-btn">></span></a>
+            <div class="submenu">
+                <a href="#" class="menu-item">Subelemento 1.1.1</a>
+                <a href="#" class="menu-item">Subelemento 1.1.2</a>
+            </div>
+            <a href="#" class="menu-item">Subelemento 1.2</a>
+        </div>
+        <a href="#" class="menu-item">Elemento 2</a>
+        <a href="#" class="menu-item">Elemento 3</a>
+    </div>
+    <script>
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.addEventListener('click', (event) => {
+                const nextSubmenu = item.nextElementSibling;
+                if (nextSubmenu && nextSubmenu.classList.contains('submenu')) {
+                    nextSubmenu.classList.toggle('active');
+                    event.preventDefault(); // Evita que el enlace se siga
+                }
+            });
+        });
+
+        document.querySelectorAll('.toggle-btn').forEach(btn => {
+            btn.addEventListener('click', (event) => {
+                const parentItem = btn.parentElement;
+                const nextSubmenu = parentItem.nextElementSibling;
+                if (nextSubmenu && nextSubmenu.classList.contains('submenu')) {
+                    nextSubmenu.classList.toggle('active');
+                    event.preventDefault(); // Evita que el enlace se siga
+                }
+            });
+        });
+    </script>
+</body>
+</html>

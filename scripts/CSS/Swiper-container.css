@@ -1,0 +1,84 @@
+.color-superpuesto {
+    position: absolute; /* Establece posición absoluta dentro del cuerpo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 23, 10, 0.5); /* Color translúcido en formato RGBA */
+    z-index: 2;
+    pointer-events: none; /* Permite que los clics pasen a través del color superpuesto */
+}
+
+.swiper-container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.swiper-slide {
+    overflow: hidden; /* Ocultar desbordamiento */
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 5s ease;
+}
+
+.swiper-slide-active img {
+    transform: scale(1.1); /* Efecto de zoom */
+}
+
+.slide-text {
+    position: absolute;
+    top: 50%;
+    left: 32vw; /* Ajusta la posición horizontal del texto */
+    transform: translate(-50%, -50%); /* Centra el texto verticalmente */
+    color: white;
+    text-align: left; /* Alinea el texto a la izquierda */
+    opacity: 1;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    z-index: 10; /* Asegura que el texto esté por encima de la imagen */
+    width: 80%; /* Ajusta el ancho para evitar cortes en el texto */
+    max-width: 50vw; /* Limita el ancho máximo para mantener el texto en el contenedor */
+    overflow-wrap: break-word; /* Permite el ajuste de línea */
+    padding: 1rem; /* Añade algo de padding para evitar que el texto quede pegado a los bordes */
+    box-sizing: border-box; /* Incluye padding en el ancho total del elemento */
+}
+
+.slide-text h1 {
+    font-size: 8vh; /* Ajusta el tamaño del título */
+    margin: 0; /* Elimina márgenes superiores e inferiores */
+}
+
+.slide-text p {
+    font-size: 4vh; /* Ajusta el tamaño del texto del párrafo */
+    margin: 0.5em 0 0 0; /* Añade un poco de margen superior si es necesario */
+}
+
+/* Animación de entrada del texto */
+.slide-in {
+    opacity: 1;
+    transform: translate(-50%, -50%) translateX(0);
+}
+
+/* Animación de salida del texto */
+.slide-out {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateX(-100%);
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: white;
+    z-index: 11;
+}
+
+.swiper-pagination-bullet {
+    background: white;
+}
+
+.swiper-pagination-bullet-active {
+    background: rgb(158, 194, 70);
+}

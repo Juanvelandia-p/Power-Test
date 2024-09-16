@@ -1,0 +1,96 @@
+/* Media Query para pantallas de 1024px o menos */
+@media screen and (max-width: 1024px) {
+    .Descripcion {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+
+    .Left-content, .Description-text {
+        width: 100%;
+        padding: 10px;
+        margin: 0;
+    }
+
+    .Left-content {
+        padding: 0;
+    }
+
+    .Description-text {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .Description-text p {
+        font-size: medium;
+    }
+
+    .title-logo {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: auto;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .title-logo h1 {
+        margin: 0;
+        text-align: left;
+        font-size: 1.5em;
+    }
+
+    #Logo-enterpice {
+        display: flex;
+        justify-content: flex-end;
+        width: auto;
+    }
+
+    .Logo-s {
+        max-width: 6em;
+        margin-right: 2em;
+    }
+
+    .Coti-button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #path {
+        display: flex; /* Alinea los elementos en fila */
+        flex-direction: row;
+        align-items: center; /* Centra verticalmente los elementos */
+        flex-wrap: nowrap; /* Evita que los elementos se envuelvan */
+        overflow-x: auto; /* Permite el desplazamiento horizontal si es necesario */
+    }
+
+    #path a, #path p {
+        font-size: small; /* Ajusta el tamaño de la letra */
+        margin: 0 0.5em; /* Ajusta el margen entre los elementos */
+        white-space: nowrap; /* Evita que el texto se envuelva */
+    }
+
+    /* Ajustes para la top bar */
+    .top_sub-page {
+        display: flex;
+        align-items: center; /* Alinea verticalmente al centro */
+        justify-content: flex-start; /* Alinea todo al margen izquierdo */
+        padding: 0.5em 1em; /* Ajusta el padding para mejorar el espaciado */
+        padding-left: 0;
+        margin-left: 0;
+        margin-bottom: 1em;
+        border-bottom: 2px solid rgb(158, 194, 70);
+    }
+
+    #Logo-subpage {
+        width: auto; /* Ajusta el tamaño máximo del logo según sea necesario */
+        max-width: 16vw; /* Ajusta el tamaño máximo del logo para que se adapte al ancho disponible */
+    }
+}
+
+@media screen and (max-width: 400px){
+    #Logo-subpage {
+        width: auto; /* Ajusta el tamaño máximo del logo según sea necesario */
+        max-width: 30vw; /* Ajusta el tamaño máximo del logo para que se adapte al ancho disponible */
+    }
+}

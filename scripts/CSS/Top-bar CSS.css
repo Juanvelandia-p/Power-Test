@@ -1,0 +1,225 @@
+.top-bar {
+    background-color: rgba(0, 23, 10, 0.7);
+    color: rgb(255, 255, 255);
+    padding: 1rem 2vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    transition: transform 0.3s ease,background-color 1s;
+    z-index: 10;
+}
+
+.top-bar:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+.top-bar:hover .navbar a {
+    color: rgb(0, 49, 21);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 2vw;
+}
+
+#logo-lightened {
+    max-width: 12vw;
+    height: auto;
+    display: block;
+}
+
+.right-Content {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    border-left: 2px solid rgb(158, 194, 70);
+    padding-left: 1rem;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0.5em;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Asegura que los elementos se dispongan horizontalmente */
+}
+
+.navbar li {
+    position: relative;
+    margin-right: 20px; /* Espacio entre elementos de la navbar */
+}
+
+.navbar li:hover::after {
+    content: '';
+    position: absolute;
+    top: 100%; /* Ajusta esta posición para que esté justo debajo del enlace */
+    left: 0;
+    width: 100vh;
+    height: 50px; /* Ajusta la altura según sea necesario */
+    z-index: 1;
+}
+
+.navbar a {
+    color: aliceblue;
+    text-decoration: none;
+    margin: 1rem;
+    font-weight: bold;
+    font-size: medium;
+    text-align: left;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+    color: rgb(0, 23, 10);
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+    margin-left: auto;
+}
+
+.menu-toggle:hover {
+    color: rgb(0, 49, 21);
+}
+
+.close-menu {
+    display: none;
+    font-size: 1.5rem;
+    color: rgb(0, 49, 21);
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 25;
+}
+
+.submenu-container {
+    position: fixed;
+    top: 4em; /* Ajusta esta altura para que esté justo debajo de la top-bar */
+    left: 0;
+    width: 100vw;
+    background-color: #fff;
+    border-top: 3px solid rgb(158, 194, 70);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s ease-in-out;
+    z-index: 9; 
+    max-height: 70vh; /* Ajusta la altura máxima según sea necesario */
+    overflow-y: auto;
+}
+
+
+.dropdown:hover .submenu-container,
+.submenu-container:hover {
+    visibility: visible;
+    opacity: 1;
+}
+
+.submenu {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 20px;
+}
+
+.submenu-column {
+    display: inline-block;
+    margin-right: 20px;
+    position: relative;
+}
+
+.submenu-column a {
+    color: rgb(0, 49, 21);
+    text-decoration: none;
+    display: block;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+    font-size: medium;
+  }
+  
+  .submenu-column h1 a {
+    color: rgb(0, 23, 10);
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s ease;
+    font-size: larger;
+  }
+  
+  .submenu-column h1 a:hover {
+    color: rgb(0, 49, 21); /* Color del texto del h1 cuando se pasa el mouse sobre el hipervínculo */
+  }
+  
+
+.submenu-column a:hover {
+    color:rgb(158, 194, 70);
+    background-color: #f9f9f9;
+}
+
+.separator {
+    border: none; /* Elimina el borde predeterminado de hr */
+    border-top: 2px solid rgb(158, 194, 70); /* Cambia el grosor y el color de la línea */
+    margin: 10px 0; /* Espaciado arriba y abajo */
+    width: 100%; /* Ancho de la línea */
+}
+
+/* Mini menus */
+.mini-submenu {
+    position: relative; 
+    background-color: white;
+    padding-left: 2em;
+    display: none; /* Oculto por defecto */
+    z-index: 11; /* Asegura que esté sobre otros elementos */
+    white-space: nowrap; /* Evita que los textos largos se desborden */
+    opacity: 0; /* Inicialmente invisible */
+    transition: opacity 0.3s ease; /* Transición suave para la opacidad */
+}
+
+.expand-submenu {
+    display: none;
+}
+
+.mini-submenu.show {
+    display: block; /* Muestra el menú cuando se aplica la clase 'show' */
+    opacity: 1; /* Visible cuando se aplica la clase 'show' */
+}
+
+.mini-submenu a {
+    color: rgb(0, 49, 21);
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+}
+
+.mini-submenu a:hover {
+    color:  #003115; /* Cambia el color del texto al pasar el mouse sobre el enlace */
+}
+
+/* Mostrar el mini-submenu al hacer hover sobre el enlace con la clase .has-mini-submenu o sobre el mismo mini-submenu */
+.has-mini-submenu:hover + .mini-submenu,
+.mini-submenu:hover {
+    display: block; /* Muestra el mini-submenu */
+}
+
+
+
+
+

@@ -1,0 +1,204 @@
+@media (max-width: 680px) {
+    .menu-toggle {
+        display: block; /* Mostrar el botón del menú en pantallas pequeñas */
+    }
+
+    .logo {
+        max-width: 60vw; /* Ajusta el tamaño del logo para que sea proporcional */
+        height: auto; /* Ajusta la altura para que se adapte al contenedor */
+    }
+
+    #logo-lightened {
+        max-width: 55vw; /* Ajusta el tamaño del logo para que sea proporcional */
+        height: auto; /* Ajusta la altura para que se adapte al contenedor */
+    }
+
+    .top-bar {
+        justify-content: space-between; /* Asegurarse de que el contenido esté bien alineado */
+        height: 15%;
+        padding:0;
+    }
+    .top-bar:hover{
+        background-color: rgba(0, 23, 10, 0.7);
+    } 
+
+    .right-Content {
+        margin-right: 6vw;
+    }
+
+    .slide-text {
+        left: 40vw;
+    }
+
+    .logo-container {
+        margin-top: 4vw;
+        height: 6vh;
+    }
+
+    #Logo-C {
+        max-width: 5vh; /* Ajusta el tamaño del logo para que sea proporcional */
+        height: auto;
+    }
+
+    .slide-text {
+        left: 20vw; /* Ajusta la posición horizontal del texto en pantallas pequeñas */
+        transform: translate(-10vw, -50%); /* Ajusta la transformación para mantener el centrado vertical */
+        width: 85%; /* Ajusta el ancho para evitar cortes */
+        max-width: 80vw; /* Limita el ancho máximo para mantener el texto en el contenedor */
+        padding: 1rem; /* Añade padding para evitar que el texto quede pegado a los bordes */
+    }
+
+    .slide-text h1 {
+        font-size: 6vh; /* Ajusta el tamaño del título para pantallas pequeñas */
+    }
+
+    .slide-text p {
+        font-size: 3vh; /* Ajusta el tamaño del párrafo para pantallas pequeñas */
+    }
+
+    .dropdown-content {
+        display: none; /* Asegurarse de que el menú desplegable esté oculto en móviles */
+    }
+
+    .show-menu {
+        display: flex; /* Mostrar el contenido del menú en móviles */
+        margin-top: auto;
+        right: 0;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 60vw;
+        max-width: 80vw;
+        background-color: rgba(255,255, 255, 0.9);
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 20;
+        padding-top: 6em;
+        overflow:initial;
+    }
+
+    .navbar ul li {
+        margin: 0;
+        padding: 10px;
+        text-align: start;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 2rem;
+        cursor: pointer;
+        color: white;
+        margin-left: auto;
+    }
+
+    .close-menu {
+        display: block;
+        font-size: 2rem;
+        color:rgba(0, 23, 10, 0.7);
+        cursor: pointer;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        z-index: 21;
+    }
+
+    .navbar ul.show-menu {
+        transform: translateX(0);
+    }
+
+    .dropdown .submenu-container {
+        display: none;
+        padding: 0;
+        right: 0;
+    }
+
+    .submenu-container {
+        display: none; /* Ocultar todos los submenús por defecto */
+        flex-direction: column; /* Alinear submenús verticalmente */
+        max-width:60vw;
+        max-height:80%;
+        margin-left: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+
+    .submenu-content {
+        display: none; /* Ocultar contenido de cada sección por defecto */
+        margin-left: 15px; /* Añadir un pequeño margen a la izquierda */
+    }
+
+    .show .submenu-container,
+    .show .submenu-content {
+        display: block; /* Mostrar contenido cuando la clase 'show' esté presente */
+    }
+
+    .submenu-header {
+        cursor: pointer; /* Indicar que el encabezado es interactivo */
+        margin: 5px 0; /* Espacio entre encabezados */
+        display: flex; /* Para alinear el botón con el texto */
+        justify-content: space-between; /* Alinear botón y texto */
+        align-items: center; /* Centrar verticalmente */
+    }
+
+    .expand-submenu {
+        display: table-row;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #333;
+        margin-left: 10px;
+    }
+
+    .dropdown .submenu-container {
+        display: none;
+        padding-left: 15px;
+        margin-left: 10px;
+        border-left: 2px solid #ddd;
+    }
+
+    .dropdown.show .submenu-container {
+        display: block;
+    }
+    .submenu{
+        flex-direction: column;
+        overflow-y: auto;
+        height: 175vw;
+        width: 80vw;
+        margin: 0;
+        padding: 0;
+    }
+    .submenu-column {
+        white-space: nowrap; /* Evita que el texto se envuelva */
+    }
+    .submenu-column h1{
+        font-size: 1.25em;
+        padding-left: 0;
+    }
+    .submenu-column a{
+        font-size: 0.8em;
+        margin: 0.25em;
+    }
+    .separator{
+        width: 60%;
+        margin-left: 0.5em;
+    }
+
+}
+@media (max-width: 300px) {
+    .navbar ul{
+        width: 70vw;
+    }
+    .submenu-container{
+        max-width: 75vw;
+    }
+    .submenu-column a{
+        font-size: 0.7em;
+        margin: 0.25em;
+    }
+}
