@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Ruta a las imágenes
-    const logoOriginal = 'resources/logos/Logo lightened actualizado.png'; // Ajusta el nombre del archivo
-    const logoHover = 'resources/logos/Logo completo darkned.png'; // Ajusta el nombre del archivo
+    const logoOriginal = 'resources/logos/Logo lightened actualizado.avif'; // Ajusta el nombre del archivo
+    const logoHover = 'resources/logos/Logo completo darkned.avif'; // Ajusta el nombre del archivo
 
     // Función para cambiar el logo en función del tamaño de la pantalla
     const applyLogoChange = () => {
