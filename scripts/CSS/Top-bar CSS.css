@@ -219,7 +219,10 @@
     display: block; /* Muestra el mini-submenu */
 }
 
-
+.top-bar.hidden {
+    transform: translateY(-100%); /* Mueve la barra hacia arriba fuera de la vista */
+    transition: transform 0.3s ease; /* Transición suave */
+}
 
 
 

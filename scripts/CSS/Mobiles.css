@@ -4,8 +4,8 @@
     }
 
     .logo {
-        max-width: 60vw; /* Ajusta el tamaño del logo para que sea proporcional */
-        height: auto; /* Ajusta la altura para que se adapte al contenedor */
+        max-height: 50vw; /* Ajusta el tamaño del logo para que sea proporcional */
+        width: auto; /* Ajusta la altura para que se adapte al contenedor */
     }
 
     #logo-lightened {
@@ -71,7 +71,7 @@
         position: fixed;
         top: 0;
         right: 0;
-        height: 100%;
+        height: 95vh; /* Asegura que ocupe toda la altura de la pantalla */
         width: 60vw;
         max-width: 80vw;
         background-color: rgba(255,255, 255, 0.9);
@@ -188,8 +188,26 @@
         width: 60%;
         margin-left: 0.5em;
     }
-
+    .slide-content {
+        flex-direction: row; /* Mantiene texto e imagen en fila */
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+    
+    .image-container {
+        display: none;
+    }
+    
+    .Logo-Over-Image {
+        max-width: 80%;  /* O prueba con 60% si quieres que sea más pequeña */
+        max-height: 25vw;
+        height: auto;
+        object-fit: contain;
+    }
+    
 }
+
 @media (max-width: 300px) {
     .navbar ul{
         width: 70vw;
