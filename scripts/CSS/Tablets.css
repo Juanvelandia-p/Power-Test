@@ -1,0 +1,147 @@
+@media (min-width: 681px) and (max-width: 1024px) {
+    /* Mostrar el botón del menú */
+    .menu-toggle {
+        display: block;
+        font-size: 2.2rem;
+        color: white;
+        margin-left: auto;
+        cursor: pointer;
+    }
+
+    /* Ajustar el logo */
+    .logo {
+        max-height: 12vh;
+        width: auto;
+    }
+
+    #logo-lightened {
+        max-width: 35vw;
+        height: auto;
+    }
+
+    /* Ajustar la barra superior */
+    .top-bar {
+        justify-content: space-between;
+        height: auto;
+        padding: 1vh 2vw;
+    }
+
+    .right-Content {
+        margin-right: 4vw;
+    }
+
+    /* Contenedor de la imagen */
+    .image-container {
+        display: flex;
+        justify-content: flex-end; /* Centrar la imagen */
+        width: 100%;
+        height: auto;
+        margin-right: 3vw;
+    }
+
+    /* Ajustar la navegación */
+    .navbar ul {
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 95vh; /* Asegura que ocupe toda la altura de la pantalla */
+        width: 30vw; /* Reduce el ancho del menú */
+        max-width: 35vw; /* Limita el ancho máximo */
+        background-color: rgba(255, 255, 255, 0.95);
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 20;
+        padding-top: 6em; /* Espaciado superior para evitar que el contenido toque la barra superior */
+        overflow-y: auto; /* Permite desplazarse si el contenido es largo */
+    }
+
+    .navbar ul li {
+        margin: 0;
+        padding: 1em;
+        text-align: left;
+    }
+
+    .navbar ul.show-menu {
+        transform: translateX(0);
+    }
+
+    .close-menu {
+        display: block;
+        font-size: 2rem;
+        color: rgba(0, 23, 10, 0.7);
+        cursor: pointer;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        z-index: 21;
+    }
+
+    /* Submenús */
+    .dropdown .submenu-container {
+        display: none;
+        padding-left: 1em;
+        margin-left: 10px;
+        border-left: 2px solid #ccc;
+    }
+
+    .dropdown.show .submenu-container {
+        display: block;
+    }
+
+    .submenu {
+        flex-direction: column;
+        overflow-y: auto;
+        max-height: 100vh;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .submenu-column {
+        white-space: nowrap;
+    }
+
+    .submenu-header {
+        cursor: pointer;
+        margin: 5px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .expand-submenu {
+        display: inline-block;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #333;
+        margin-left: 10px;
+    }
+
+    .submenu-content {
+        display: none;
+        margin-left: 15px;
+    }
+
+    .show .submenu-content {
+        display: block;
+    }
+
+    /* Ajustar el footer */
+    .footer-bar {
+        padding: 2rem;
+        text-align: center;
+    }
+
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        margin-bottom: 1rem;
+    }
+}

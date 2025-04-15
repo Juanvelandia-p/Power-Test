@@ -31,6 +31,7 @@
 }
 
 .slide-text {
+    flex: 1;
     position: absolute;
     top: 50%;
     left: 32vw; /* Ajusta la posición horizontal del texto */
@@ -40,11 +41,12 @@
     opacity: 1;
     transition: opacity 0.5s ease, transform 0.5s ease;
     z-index: 10; /* Asegura que el texto esté por encima de la imagen */
-    width: 80%; /* Ajusta el ancho para evitar cortes en el texto */
+    width: 60%; /* Ajusta el ancho para evitar cortes en el texto */
     max-width: 50vw; /* Limita el ancho máximo para mantener el texto en el contenedor */
     overflow-wrap: break-word; /* Permite el ajuste de línea */
     padding: 1rem; /* Añade algo de padding para evitar que el texto quede pegado a los bordes */
     box-sizing: border-box; /* Incluye padding en el ancho total del elemento */
+    margin-right: 2vw; /* Espacio a la derecha */
 }
 
 .slide-text h1 {
@@ -81,4 +83,49 @@
 
 .swiper-pagination-bullet-active {
     background: rgb(158, 194, 70);
+}
+
+.slide-content {
+    position: absolute; /* <-- esto es clave */
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+    z-index: 1.5; /* para estar por encima de la imagen de fondo */
+}
+
+.image-container {
+    flex: 1;
+    display: flex;
+    justify-content:right;
+    align-items: center;
+    overflow:visible;
+    z-index: 1.5; /* Asegura que la imagen esté por encima del fondo */
+    margin-right: 10vw; /* Espacio a la derecha */
+    
+}
+.Logo-Over-Image {
+    max-width: 50%;
+    height: auto;
+    max-height: 50%; /* Limita la altura para que no se desborde */
+    object-fit: contain;
+    padding-left: 5vw; /* Espacio a la izquierda */
+    padding-top: 10vh; /* Espacio superior */
+    z-index: 1.5; /* Asegura que la imagen esté por encima del fondo */}
+
+
+.animated-image {
+    width: auto; /* Ajusta automáticamente el ancho */
+    max-width: 50%; /* Limita el ancho máximo al 50% del contenedor */
+    height: auto;
+    transition: transform 0.5s ease;
+}
+
+.animated-image:hover {
+    transform: scale(1.5); /* Agrandamiento al pasar el mouse */
 }
