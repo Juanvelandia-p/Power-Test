@@ -13,7 +13,7 @@
     justify-content: space-between;
     box-sizing: border-box;
     transition: transform 0.3s ease,background-color 1s;
-    z-index: 10;
+    z-index: 20;
 }
 
 .top-bar:hover {
@@ -123,7 +123,7 @@
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s, opacity 0.3s ease-in-out;
-    z-index: 9; 
+    z-index: 19; 
     max-height: 70vh; /* Ajusta la altura máxima según sea necesario */
     overflow-y: auto;
 }
@@ -187,7 +187,7 @@
     background-color: white;
     padding-left: 2em;
     display: none; /* Oculto por defecto */
-    z-index: 11; /* Asegura que esté sobre otros elementos */
+    z-index: 21; /* Asegura que esté sobre otros elementos */
     white-space: nowrap; /* Evita que los textos largos se desborden */
     opacity: 0; /* Inicialmente invisible */
     transition: opacity 0.3s ease; /* Transición suave para la opacidad */

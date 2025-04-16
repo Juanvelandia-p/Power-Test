@@ -79,10 +79,12 @@
 
 .swiper-pagination-bullet {
     background: white;
+    z-index: 5;
 }
 
 .swiper-pagination-bullet-active {
     background: rgb(158, 194, 70);
+    z-index: 5;
 }
 
 .slide-content {
