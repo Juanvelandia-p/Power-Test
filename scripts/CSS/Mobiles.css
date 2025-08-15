@@ -13,92 +13,44 @@
     border-radius: 0 0 18px 18px;
     background: #fff;
     }
-      /* Ajuste para Co-visions y Co-visions.reverse en móviles: imagen arriba, texto abajo */
-    .Co-visions {
-        flex-direction: column !important;
-        height: auto;
-        min-height: unset;
-        padding: 2vw 0;
-    }
-    .Co-visions .vision-content {
-        flex-direction: column !important;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 2vw;
-        width: 98vw;
-        margin-left: 0;
-        margin-right: 0;
-        padding: 2vw 2vw;
-        text-align: center;
-    }
 }
 
-    /* Imagen entre título y párrafo en móviles para Co-visions y reverse */
-    @media (max-width: 680px) {
-      .Co-visions .vision-text h1,
-      .Co-visions.reverse .vision-text h1 {
-        order: 1;
-      }
-      .Co-visions .vision-image,
-      .Co-visions.reverse .vision-image {
-        order: 2;
-      }
-      .Co-visions .vision-text p,
-      .Co-visions.reverse .vision-text p {
-        order: 3;
-      }
-      .Co-visions .vision-content,
-      .Co-visions.reverse .vision-content {
-        display: flex;
-        flex-direction: column !important;
-      }
-      .Co-visions .vision-text,
-      .Co-visions.reverse .vision-text {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-    .Co-visions.reverse {
-        flex-direction: column-reverse !important;
-        height: auto;
-        min-height: unset;
-        padding: 2vw 0;
-    }
-    .Co-visions.reverse .vision-content {
-        flex-direction: column-reverse !important;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 2vw;
-        width: 98vw;
-        margin-left: 0;
-        margin-right: 0;
-        padding: 2vw 2vw;
-        text-align: center;
-    }
-    .Co-visions .vision-image, .Co-visions.reverse .vision-image {
-        width: 90vw;
-        max-width: 98vw;
-        min-width: 0;
-        margin: 0 auto 2vw auto;
-        justify-content: center;
-        align-items: center;
-        flex: none;
-    }
-    .Co-visions .vision-image img, .Co-visions.reverse .vision-image img {
-        width: 100%;
-        height: auto;
-        max-height: 45vw;
-        object-fit: cover;
-        border-radius: 12px;
-        box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-        display: block;
-    }
-    .Co-visions .vision-text, .Co-visions.reverse .vision-text {
-        padding: 0;
-        text-align: center;
-        width: 100%;
-    }
+/* En móviles, en Co-visions y reverse, imagen arriba y texto abajo */
+@media (max-width: 680px) {
+  .Co-visions, .Co-visions.reverse {
+    flex-direction: column !important;
+    height: auto;
+    min-height: unset;
+    padding: 2vw 0;
+  }
+  .Co-visions .vision-content, .Co-visions.reverse .vision-content {
+    flex-direction: column !important;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2vw;
+    width: 98vw;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 2vw 2vw;
+    text-align: center;
+  }
+  .Co-visions .vision-image, .Co-visions.reverse .vision-image {
+    order: 1;
+    width: 90vw;
+    max-width: 98vw;
+    min-width: 0;
+    margin: 0 auto 2vw auto;
+    justify-content: center;
+    align-items: center;
+    flex: none;
+  }
+  .Co-visions .vision-text, .Co-visions.reverse .vision-text {
+    order: 2;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+  }
+}
 @media (max-width: 680px) {
     .menu-toggle {
         display: block; /* Mostrar el botón del menú en pantallas pequeñas */
