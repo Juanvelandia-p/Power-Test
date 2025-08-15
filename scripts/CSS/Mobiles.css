@@ -1,6 +1,6 @@
 /* Mejorar solo la imagen de fondo de Services en móviles */
 @media (max-width: 680px) {
-  .Services-bg-img {
+    .Services-bg-img {
     object-fit: cover !important;
     width: 100vw !important;
     height: 45vh !important;
@@ -12,9 +12,8 @@
     z-index: 1;
     border-radius: 0 0 18px 18px;
     background: #fff;
-  }
-}
-    /* Ajuste para Co-visions y Co-visions.reverse en móviles: imagen arriba, texto abajo */
+    }
+      /* Ajuste para Co-visions y Co-visions.reverse en móviles: imagen arriba, texto abajo */
     .Co-visions {
         flex-direction: column !important;
         height: auto;
@@ -32,6 +31,8 @@
         padding: 2vw 2vw;
         text-align: center;
     }
+}
+
     /* Imagen entre título y párrafo en móviles para Co-visions y reverse */
     @media (max-width: 680px) {
       .Co-visions .vision-text h1,
