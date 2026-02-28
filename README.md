@@ -27,6 +27,7 @@
 12. [CI/CD](#12-cicd)
 13. [Contributing](#13-contributing)
 14. [License](#14-license)
+15. [Developer Portfolio](#15-developer-portfolio)
 
 ---
 
@@ -418,3 +419,31 @@ For licensing inquiries, contact: **c.molano@powertestcolombiasas.com**
   📧 comercial@powertestcolombia.com<br>
   🌐 <a href="https://www.instagram.com/powertestcolombia/">Instagram</a> · <a href="https://web.facebook.com/PowerTestColombia">Facebook</a>
 </p>
+
+---
+
+## 15. Developer Portfolio
+
+This website was built and is maintained by **Juan Sebastián Velandia Pedraza**, a backend/fullstack engineer. Below are the featured repositories that best showcase his technical breadth:
+
+| Repository | Stack | Highlights |
+|---|---|---|
+| [FlowBoard](https://github.com/Juanvelandia-p/FlowBoard) | Java 17 · Spring Boot · MongoDB · WebSocket · JWT · Azure | Real-time collaborative Scrum board — JWT auth, WebSocket/STOMP channels, MongoDB Atlas, CI/CD to Azure App Service via GitHub Actions |
+| [FlowBoard-front](https://github.com/Juanvelandia-p/flowboard-front) | React · SockJS · STOMP | React SPA that pairs with FlowBoard — real-time drag-and-drop Kanban, per-task chat, sprint management |
+| [Power-Test](https://github.com/Juanvelandia-p/Power-Test) *(this repo)* | HTML5 · CSS3 · Vanilla JS · Vercel | Production corporate website for Power Test Colombia S.A.S. — responsive multi-page catalogue, Vercel CI/CD, live at [powertestcolombiasas.com](https://powertestcolombiasas.com) |
+| ⭐ [chatgptapi](https://github.com/Juanvelandia-p/chatgptapi) | Java 17 · Spring Boot · OpenAI API | **Recommended next feature** — see justification below |
+
+### ⭐ Recommended Next Featured Repository: `chatgptapi`
+
+**Repository:** [https://github.com/Juanvelandia-p/chatgptapi](https://github.com/Juanvelandia-p/chatgptapi)
+
+**Why it stands out — criterion by criterion:**
+
+| Criterion | Evidence in `chatgptapi` |
+|---|---|
+| **Architecture & clean code** | Applies the **GoF Proxy design pattern** explicitly: `OpenAIService` (direct call) is wrapped by `OpenAIServiceProxy` (validation + cache), providing a clean service-layer separation and demonstrating knowledge of structural design patterns beyond MVC |
+| **Advanced APIs & integrations** | Integrates with the **OpenAI ChatGPT REST API** — one of the most in-demand integration skills in 2025–2026; shows ability to consume external, authenticated HTTP APIs from a Spring Boot backend |
+| **Complex business logic** | Implements an **in-memory response cache** that short-circuits repeated queries, plus a multi-rule **input validation layer** (null check, minimum length, reject numeric-only, reject symbol-only messages) — all without a framework dependency |
+| **Complementary to FlowBoard** | FlowBoard proves real-time collaboration (WebSocket, JWT, MongoDB); `chatgptapi` adds **AI/LLM backend integration** — together they cover two of the most sought-after backend competency areas in modern hiring |
+
+**In one sentence:** `chatgptapi` demonstrates that the developer can architect a clean, pattern-driven Spring Boot service that integrates with cutting-edge AI APIs — a skill set that directly complements the real-time and persistence strengths already shown by FlowBoard.
