@@ -261,28 +261,29 @@ Contributions that introduce interactive functionality are encouraged to include
 
 ## 11. Deployment
 
-The site can be deployed to any static hosting platform with zero build steps.
+### Current Production Deployment
 
-### Option A — GitHub Pages (Recommended)
+The live production site is served from **Vercel** at:
 
-1. Go to **Settings → Pages** in the GitHub repository.
-2. Set the source branch to `main` (or your production branch) and the root folder to `/ (root)`.
-3. GitHub will publish the site at `https://<username>.github.io/Power-Test/`.
+> **[https://power-test.vercel.app](https://power-test.vercel.app)**
 
-### Option B — Netlify
+Vercel automatically handles CDN distribution, HTTPS, and edge caching. No manual deployment steps are required — see [Section 12 (CI/CD)](#12-cicd) for how deployments are triggered.
+
+### Alternative Hosting Options
+
+The site can also be deployed to any static hosting platform with zero build steps.
+
+#### GitHub Pages (also active)
+
+GitHub Pages is currently enabled for this repository (verifiable under **Settings → Pages**). The `pages-build-deployment` GitHub Actions workflow runs automatically on push to `master` and publishes the site at `https://juanvelandia-p.github.io/Power-Test/`.
+
+#### Netlify
 
 1. Connect the GitHub repository in the Netlify dashboard.
 2. Set **Build command** to *(empty)* and **Publish directory** to `.` (root).
 3. Deploy — Netlify will serve the site from its global CDN automatically.
 
-### Option C — Vercel
-
-1. Import the GitHub repository in the Vercel dashboard.
-2. Framework preset: **Other**.
-3. Leave the build command empty and the output directory as `.`.
-4. Deploy — Vercel handles CDN distribution and HTTPS automatically.
-
-### Option D — Traditional Web Server (Apache / Nginx)
+#### Traditional Web Server (Apache / Nginx)
 
 Copy all repository files to the web server's document root (e.g. `/var/www/html/`) and ensure the server is configured to serve static files. No special configuration is required.
 
@@ -292,52 +293,60 @@ Copy all repository files to the web server's document root (e.g. `/var/www/html
 
 ## 12. CI/CD
 
-### Current State
+This project uses a **fully automated CI/CD pipeline powered by Vercel**, triggered on every push and pull request through the native GitHub integration. No manual deployment steps are required.
 
-This repository does **not currently have an automated CI/CD pipeline**. There are no workflow files in `.github/workflows/` and no external CI service (Jenkins, CircleCI, GitLab CI, etc.) is configured.
-
-All deployments are currently performed **manually** by cloning or downloading the repository and uploading files to the target hosting environment.
-
-### Recommended Future Pipeline
-
-For a production-grade setup, the following GitHub Actions workflow is suggested:
+### Pipeline Overview
 
 ```
-Trigger: push to main / pull_request to main
-  │
-  ├─ 1. HTML validation (html-validate / W3C Nu Validator)
-  ├─ 2. CSS lint (stylelint)
-  ├─ 3. JavaScript lint (eslint)
-  ├─ 4. Link checker (broken-link-checker)
-  └─ 5. Deploy to GitHub Pages / Netlify (on merge to main)
+Developer pushes code or opens a Pull Request
+        │
+        ▼
+  Vercel GitHub App detects the event
+        │
+        ├─ Pull Request → Preview Deployment
+        │     • Unique preview URL per PR branch
+        │     • vercel[bot] posts the URL as a PR comment
+        │     • GitHub commit status set to "success" once live
+        │
+        └─ Push to master → Production Deployment
+              • Full deployment to https://power-test.vercel.app
+              • Global CDN invalidation and edge cache refresh
+              • GitHub commit status updated to "success"
 ```
 
-A minimal example for GitHub Pages deployment:
+### Vercel Integration Details
 
-```yaml
-# .github/workflows/deploy.yml
-name: Deploy to GitHub Pages
+| Property | Value |
+|---|---|
+| **Platform** | [Vercel](https://vercel.com) |
+| **Production URL** | [https://power-test.vercel.app](https://power-test.vercel.app) |
+| **Vercel project** | `gsvelandia09s-projects/power-test` |
+| **Trigger** | Every push to any branch; every pull request |
+| **Build command** | *(none — zero-config static site)* |
+| **Output directory** | `.` (repository root) |
+| **Config file** | No `vercel.json` needed; Vercel auto-detects the static site |
 
-on:
-  push:
-    branches: [main]
+### Pull Request Preview Deployments
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .
-```
+Every pull request automatically receives:
 
-This workflow would provide:
-- **Automated delivery** on every merge to `main`
-- **Zero-downtime deployments** via atomic file replacement on the CDN
-- **Audit trail** of every deployment linked to a specific commit
+1. A **preview deployment** at a unique branch-scoped URL  
+   (e.g. `https://power-test-git-<branch>-gsvelandia09s-projects.vercel.app`)
+2. A **`vercel[bot]` comment** in the PR thread with the deployment status, preview link, and a live-feedback link
+3. A **GitHub commit status check** (`context: "Vercel"`) set to `success` once the deployment completes — this check must pass before merging is allowed
+
+### GitHub Pages (secondary pipeline)
+
+GitHub Pages is also enabled. The built-in `pages-build-deployment` workflow fires automatically on every push to `master` and publishes the site at `https://juanvelandia-p.github.io/Power-Test/`. This workflow has a verified deployment history visible under the [Actions tab](https://github.com/Juanvelandia-p/Power-Test/actions/workflows/pages/pages-build-deployment).
+
+### What Vercel Validates Per Deployment
+
+Because the project is a static site, Vercel performs:
+
+- **Asset resolution** — all HTML, CSS, JS, and image files must resolve correctly at their relative paths
+- **HTTP response codes** — the root `index.html` must return `200 OK`
+- **Build time** — deployments typically complete in under 30 seconds
+- **HTTPS enforcement** — all traffic is automatically redirected to HTTPS at the CDN edge
 
 ---
 
@@ -348,7 +357,7 @@ We welcome improvements to content, design, and developer experience. Please fol
 ### Branching Strategy
 
 ```
-main          ← production-ready code
+master        ← production-ready code (default branch, triggers Vercel production deployment)
 develop       ← integration branch (merge feature branches here first)
 feature/<name> ← individual features or content updates
 fix/<name>    ← bug fixes
