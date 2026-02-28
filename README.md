@@ -7,6 +7,8 @@
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![Swiper.js](https://img.shields.io/badge/Swiper.js-6332F6?logo=swiper&logoColor=white)](https://swiperjs.com/)
 
+🌐 **Live site: [https://powertestcolombiasas.com](https://powertestcolombiasas.com)**
+
 ---
 
 ## Table of Contents
@@ -263,11 +265,11 @@ Contributions that introduce interactive functionality are encouraged to include
 
 ### Current Production Deployment
 
-The live production site is served from **Vercel** at:
+The live production site is served at:
 
-> **[https://power-test.vercel.app](https://power-test.vercel.app)**
+> **[https://powertestcolombiasas.com](https://powertestcolombiasas.com)**
 
-Vercel automatically handles CDN distribution, HTTPS, and edge caching. No manual deployment steps are required — see [Section 12 (CI/CD)](#12-cicd) for how deployments are triggered.
+The site is hosted on **Vercel** (custom domain), which automatically handles CDN distribution, HTTPS, and edge caching. No manual deployment steps are required — see [Section 12 (CI/CD)](#12-cicd) for how deployments are triggered.
 
 ### Alternative Hosting Options
 
@@ -309,7 +311,7 @@ Developer pushes code or opens a Pull Request
         │     • GitHub commit status set to "success" once live
         │
         └─ Push to master → Production Deployment
-              • Full deployment to https://power-test.vercel.app
+              • Full deployment to https://powertestcolombiasas.com
               • Global CDN invalidation and edge cache refresh
               • GitHub commit status updated to "success"
 ```
@@ -319,7 +321,7 @@ Developer pushes code or opens a Pull Request
 | Property | Value |
 |---|---|
 | **Platform** | [Vercel](https://vercel.com) |
-| **Production URL** | [https://power-test.vercel.app](https://power-test.vercel.app) |
+| **Production URL** | [https://powertestcolombiasas.com](https://powertestcolombiasas.com) |
 | **Vercel project** | `gsvelandia09s-projects/power-test` |
 | **Trigger** | Every push to any branch; every pull request |
 | **Build command** | *(none — zero-config static site)* |
