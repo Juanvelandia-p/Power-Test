@@ -27,6 +27,7 @@
 12. [CI/CD](#12-cicd)
 13. [Contributing](#13-contributing)
 14. [License](#14-license)
+15. [Developer Backend Profile](#15-developer-backend-profile)
 
 ---
 
@@ -408,6 +409,71 @@ This project is proprietary software owned by **Power Test Colombia S.A.S.**
 All rights reserved. No part of this codebase, design, or content may be reproduced, distributed, or transmitted in any form without the prior written permission of Power Test Colombia S.A.S.
 
 For licensing inquiries, contact: **c.molano@powertestcolombiasas.com**
+
+---
+
+## 15. Developer Backend Profile
+
+> *This section presents the developer's backend portfolio for recruiters and prospective employers.*
+
+**Developer:** Juan Sebastián Velandia Pedraza  
+**GitHub:** [github.com/Juanvelandia-p](https://github.com/Juanvelandia-p)
+
+---
+
+### 🏆 Recommended Backend Repository: `chatgptapi`
+
+> **[github.com/Juanvelandia-p/chatgptapi](https://github.com/Juanvelandia-p/chatgptapi)**
+
+Among all backend repositories in this portfolio (excluding FlowBoard, Power-Test, and FlowBoard-front), **`chatgptapi`** is the strongest demonstration of backend engineering competence.
+
+#### Why it stands out
+
+| Criterion | Implementation |
+|---|---|
+| **Backend architecture & clean code** | Strict three-layer structure (`controller` / `service` / `model`), Proxy design pattern applied to the service layer, single-responsibility classes, Lombok for boilerplate reduction |
+| **Advanced RESTful API** | Spring Boot 3.5.3 REST endpoint (`GET /chat`) with parameter validation, structured JSON request/response models (`ChatRequest`, `ChatResponse`, `ChatMessage`), and input sanitisation before any outbound call |
+| **Third-party integration** | Live HTTP integration with the **OpenAI ChatGPT API** (`POST https://api.openai.com/v1/chat/completions`), API key injected via `application.properties` — never hardcoded |
+| **Performance optimisation** | `OpenAIServiceProxy` wraps the real service with a **`ConcurrentHashMap`-backed in-memory cache**, short-circuiting identical queries and avoiding redundant billable API calls |
+| **CI/CD & cloud deployment** | **GitHub Actions** pipeline (`.github/workflows/main_chatgptapi.yml`) compiles and packages the JAR on every push to `main`, then deploys automatically to **Azure App Service** (`ChatGPTapi`) using a publish-profile secret; all pipeline runs completed successfully |
+| **Security practices** | API key stored in `application.properties` / environment variable (not in source code); secrets managed through GitHub Secrets in CI; input validated to reject null, overly short, numeric-only, or symbol-only messages before forwarding to OpenAI |
+| **Error handling & business logic** | Graceful rejection of malformed input with a descriptive Spanish-language response; cache hit/miss logic; response forwarding with HTTP client error propagation |
+
+#### Technology stack
+
+| Concern | Technology |
+|---|---|
+| Language | Java 17 |
+| Framework | Spring Boot 3.5.3 |
+| HTTP client | `RestTemplate` (Spring Web) |
+| Design pattern | Proxy (service-layer caching) |
+| Concurrency | `ConcurrentHashMap` (thread-safe cache) |
+| Build | Apache Maven + Maven Wrapper |
+| CI/CD | GitHub Actions → Azure App Service |
+
+#### Key files
+
+```
+src/
+└── main/java/edu/escuelaing/arsw/chatgptapi/
+    ├── controller/ChatController.java       # REST endpoint
+    ├── service/OpenAIService.java           # Direct OpenAI HTTP client
+    ├── service/OpenAIServiceProxy.java      # Proxy: validation + cache + delegation
+    └── model/                               # ChatMessage, ChatRequest, ChatResponse
+.github/workflows/main_chatgptapi.yml        # CI/CD: build → test → deploy to Azure
+```
+
+---
+
+### Additional Backend Projects
+
+| Repository | Stack | Highlights |
+|---|---|---|
+| [FlowBoard](https://github.com/Juanvelandia-p/FlowBoard) *(excluded per brief)* | Spring Boot 3.5.3, MongoDB, JWT, WebSocket | Full-stack agile platform with JWT auth, real-time STOMP/SockJS, Azure deployment, integration tests |
+| [PizarraRealTime](https://github.com/Juanvelandia-p/PizarraRealTime) | Spring Boot, WebSocket | Real-time collaborative whiteboard; multi-client STOMP broadcast |
+| [ECISaludVital-3](https://github.com/Juanvelandia-p/ECISaludVital-3) | Spring Boot 3.5.0, MongoDB | Healthcare REST API backed by MongoDB Atlas |
+| [Networking](https://github.com/Juanvelandia-p/Networking) | Java | Low-level socket programming and HTTP server from scratch |
+| [MatrixConcurrente](https://github.com/Juanvelandia-p/MatrixConcurrente) | Java | Concurrent matrix multiplication demonstrating thread management |
 
 ---
 
